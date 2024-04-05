@@ -17,10 +17,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${roboto.variable} ${workSans.variable} font-roboto`}>
+    <html lang="en" className="h-full">
+      <body className={`${roboto.variable} ${workSans.variable} font-roboto flex flex-col min-h-full`}>
         <Header />
-        <main className='mb-auto'>{children}</main>
+        <main className='flex-auto'>{children}</main>
         <Footer />
       </body>
     </html>

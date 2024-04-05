@@ -1,9 +1,9 @@
 import LogoTitle from "@/app/_components/layout/LogoTitle";
 import MainNavigation from "@/app/_components/layout/MainNavigation";
 import ContactItem from "@/app/_components/layout/ContactItem";
+import Socials from "@/app/_components/layout/Socials";
 
 import {contacts, footerInfo, navLinks} from "@/constants";
-import Socials from "@/app/_components/layout/Socials";
 
 export default function Footer() {
   return (

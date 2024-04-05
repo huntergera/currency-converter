@@ -36,3 +36,10 @@ export const contacts = [
         text: 'Безкожтовно для дзвінків в межах України'
     },
 ]
+
+export const mainBannerTitle = 'Чіп Чендж';
+export const mainBannerText = 'Обмінник валют - навчальний';
+export const mainBannerButtonText = 'Конвертер валют';
+export const converterInfoTitle = 'Конвертер валют';
+export const converterInfoText = 'Переважна діяльність банківської групи за останні чотири звітні квартали становить 50 і більше відсотків.';
+export const converterInfoButtonText = 'Конвертувати валюту';

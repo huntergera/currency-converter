@@ -7,7 +7,7 @@ import {contacts, footerInfo, navLinks} from "@/constants";
 
 export default function Footer() {
   return (
-    <div className="py-8 bg-blue-light">
+    <footer className="py-8 bg-blue-light">
       <div className="container grid grid-cols-5 gap-2">
         <div>
           <LogoTitle />
@@ -29,6 +29,6 @@ export default function Footer() {
 
         <Socials />
       </div>
-    </div>
+    </footer>
   );
 }

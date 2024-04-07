@@ -5,7 +5,7 @@ export default function ContactItem({item}) {
     <div className="flex gap-4">
       <Icon className="mt-1.5 shrink-0" />
       <div>
-        <a href="tel:{number}">{number}</a>
+        <a href={`tel: ${number}`}>{number}</a>
         <p className="text-12 text-gray mt-2">{text}</p>
       </div>
     </div>

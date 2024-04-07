@@ -6,12 +6,12 @@ import {navLinks} from "@/constants";
 
 export default function Header() {
   return (
-    <div className="py-8 bg-blue-light">
+    <header className="py-8 bg-blue-light">
       <div className="container flex gap-x-20">
         <LogoTitle />
         <MainNavigation navLinks={navLinks}/>
         <UserAccount />
       </div>
-    </div>
+    </header>
   );
 }

@@ -1,12 +1,18 @@
-export default function ContactItem({item}) {
-  const {Icon, number, text} = item;
+import Image from "next/image";
 
+export default function ContactItem({number, title, iconPath, width}) {
   return (
-    <div className="flex gap-4">
-      <Icon className="mt-1.5 shrink-0" />
+    <div className="flex items-start gap-4">
+      <Image
+        className="mt-1.5 shrink-0"
+        src={iconPath}
+        alt={"Іконка телефону"}
+        width={width}
+        height={16}
+      />
       <div>
-        <a href={`tel: ${number}`}>{number}</a>
-        <p className="text-12 text-gray mt-2">{text}</p>
+        <a href={`tel:${number.replace(/\s/g, "")}`}>{number}</a>
+        <p className="text-12 text-gray mt-2">{title}</p>
       </div>
     </div>
   );

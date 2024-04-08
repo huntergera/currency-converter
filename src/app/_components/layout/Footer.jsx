@@ -3,7 +3,7 @@ import MainNavigation from "@/app/_components/layout/MainNavigation";
 import ContactItem from "@/app/_components/layout/ContactItem";
 import Socials from "@/app/_components/layout/Socials";
 
-import {contacts, footerInfo, navLinks} from "@/constants";
+import {footerInfo, navLinks} from "@/constants";
 
 export default function Footer() {
   return (
@@ -17,15 +17,20 @@ export default function Footer() {
             )}
           </div>
         </div>
-
         <MainNavigation navLinks={navLinks} classes={`flex-col gap-y-5 font-medium`}/>
+        <ContactItem
+          number="3773"
+          title="Цілодобова підтримка"
+          iconPath="images/icons/phone-icon.svg"
+          width="10"
+        />
+        <ContactItem
+          number="8 800 111 22 33"
+          title="Безкоштовно для дзвінків в межах України"
+          iconPath="images/icons/phone-icon2.svg"
+          width="16"
+        />
 
-        {contacts?.map((item, index) =>
-          <ContactItem
-            key={index}
-            item={item}
-          />
-        )}
 
         <Socials />
       </div>

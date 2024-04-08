@@ -1,6 +1,3 @@
-import {PhoneIcon} from "../app/_components/icons/PhoneIcon";
-import {PhoneIcon2} from "../app/_components/icons/PhoneIcon2";
-
 export const footerInfo = ['04128, м.Київ, вул. Хрещатик, 19', 'Ліцензія НБУ №156', 'Ⓒ ПАТ ЧіпЧендж, 2019-2023'];
 
 export const navLinks = [
@@ -19,18 +16,5 @@ export const navLinks = [
     {
         title: 'Задати питання',
         link: '/questions'
-    },
-]
-
-export const contacts = [
-    {
-        Icon: PhoneIcon,
-        number: '3773',
-        text: 'Цілодобова підтримка'
-    },
-    {
-        Icon: PhoneIcon2,
-        number: '8 800 111 22 33',
-        text: 'Безкожтовно для дзвінків в межах України'
     },
 ]

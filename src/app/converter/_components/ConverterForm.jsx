@@ -1,19 +1,27 @@
+import InputFile from "../../_components/ui/InputFile";
+import Select from "../../_components/ui/Select";
+import InputDate from "../../_components/ui/InputDate";
+import Image from "next/image";
+
 export default function ConverterForm() {
   return (
-    <div className="py-20 bg-blue-light">
-      <div className="container max-w-4xl py-14 px-12">
-        <h2 className="text-h2">Конвертер валют</h2>
-        <div>
-          <div>
-            <div>В мене є:</div>
-
-          </div>
-          <div>
-            <div>Хочу придбати:</div>
-
-          </div>
-        </div>
+    <form className="flex">
+      <div>
+        <div>В мене є:</div>
+        <InputFile />
+        <Select />
+        <InputDate />
       </div>
-    </div>
+      <Image
+        src="/images/icons/icon-arrows.svg"
+        alt="icon arrows"
+        width={22}
+        height={22}
+      />
+      <div>
+        <div>Хочу придбати:</div>
+
+      </div>
+    </form>
   );
 }

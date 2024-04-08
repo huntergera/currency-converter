@@ -23,6 +23,7 @@ const config: Config = {
       'blue-light': '#F6F7FF',
       'blue': '#2C36F2',
       'gray': '#707C87',
+      'gray-100': '#C1C2CA',
       'black': '#1F1E25',
       'pale-slate-blue': '#E0E1EA',
     },
@@ -43,7 +44,7 @@ const config: Config = {
         lineHeight: '16px',
       }],
       '18': ['18px', {
-        lineHeight: '25px',
+        lineHeight: '24px',
       }],
       '20': ['20px', {
         lineHeight: '24px',

@@ -12,7 +12,7 @@ export default function MainNavigation({navLinks, classes}) {
         <NavLink
           key={index}
           item={item}
-          className={`link ${pathname === item.link ? 'text-blue' : ''}`}
+          className={`link ${pathname === item.link ? '!text-blue' : ''}`}
         />
       )}
     </div>

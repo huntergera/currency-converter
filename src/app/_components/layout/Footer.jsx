@@ -30,8 +30,6 @@ export default function Footer() {
           iconPath="images/icons/phone-icon2.svg"
           width="16"
         />
-
-
         <Socials />
       </div>
     </footer>

@@ -9,7 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "main-banner": "url('../../public/images/rectangle.jpg')"
+        "main-banner": "url('../../public/images/rectangle.jpg')",
+        "calendar-icon": "url('../../public/images/icons/calendar-icon.svg')"
       },
       transitionProperty: {
         'fill': 'fill',
@@ -26,6 +27,7 @@ const config: Config = {
       'gray-100': '#C1C2CA',
       'black': '#1F1E25',
       'pale-slate-blue': '#E0E1EA',
+      'white': '#FFFFFF'
     },
     fontSize: {
       'h1': ['54px', {

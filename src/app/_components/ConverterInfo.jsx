@@ -18,7 +18,6 @@ export default function ConverterInfo() {
       <Image
         src="/images/card.jpg"
         alt="Mastercard Logo"
-        className="dark:invert"
         width={436}
         height={314}
       />

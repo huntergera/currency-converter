@@ -4,7 +4,7 @@ import ButtonLink from "./ui/ButtonLink";
 
 export default function ConverterInfo() {
   return (
-    <div className="container max-w-4xl flex gap-x-20 py-32 justify-between">
+    <section className="container max-w-4xl flex gap-x-20 py-32 justify-between">
       <div>
         <h2 className="text-h2">Конвертер валют</h2>
         <p className="text-xl text-gray mt-6">Переважна діяльність банківської групи за останні чотири звітні квартали становить 50 і більше відсотків.</p>
@@ -21,6 +21,6 @@ export default function ConverterInfo() {
         width={436}
         height={314}
       />
-    </div>
+    </section>
   )
 }

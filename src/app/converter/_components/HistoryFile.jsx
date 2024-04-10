@@ -3,7 +3,7 @@ import HistoryItem from "./HistoryItem";
 
 export default function HistoryFile() {
   return (
-    <div className="py-20">
+    <section className="py-20">
       <div className="container max-w-4xl py-14 px-12 bg-blue-light">
         <div className="flex justify-between items-center">
           <h3 className="text-h3">Історія конвертації</h3>
@@ -18,6 +18,6 @@ export default function HistoryFile() {
           <HistoryItem/>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

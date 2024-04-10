@@ -4,7 +4,7 @@ import ButtonLink from "./ui/ButtonLink";
 
 export default function MainBanner() {
   return (
-    <div className="bg-main-banner">
+    <section className="bg-main-banner">
       <div className="container max-w-4xl flex gap-x-20 py-20 justify-between">
         <div>
           <h1 className="text-h1 text-blue-light">Чіп Чендж</h1>
@@ -24,6 +24,6 @@ export default function MainBanner() {
           height={216}
         />
       </div>
-    </div>
+    </section>
   )
 }

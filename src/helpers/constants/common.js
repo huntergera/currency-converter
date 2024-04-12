@@ -18,5 +18,3 @@ export const navLinks = [
         link: '/questions'
     },
 ]
-
-export const options = ['USD', 'EUR', 'UAH'];

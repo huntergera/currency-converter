@@ -2,7 +2,7 @@ import MainNavigation from "./MainNavigation";
 import LogoTitle from "@/app/_components/layout/LogoTitle";
 import UserAccount from "@/app/_components/layout/UserAccount";
 
-import {navLinks} from "@/constants";
+import {navLinks} from "@/helpers/constants/common";
 
 export default function Header() {
   return (

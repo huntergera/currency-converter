@@ -3,7 +3,7 @@ import MainNavigation from "@/app/_components/layout/MainNavigation";
 import ContactItem from "@/app/_components/layout/ContactItem";
 import Socials from "@/app/_components/layout/Socials";
 
-import {footerInfo, navLinks} from "@/constants";
+import {footerInfo, navLinks} from "@/helpers/constants/common";
 
 export default function Footer() {
   return (

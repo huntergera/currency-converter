@@ -1,5 +1,5 @@
 import MainBanner from "../_components/MainBanner";
-import ConverterForm from "./_components/ConverterForm";
+import ConverterForm from "./_components/ConverterForm/ConverterForm";
 import HistoryFile from "./_components/HistoryFile";
 
 export default function Home() {

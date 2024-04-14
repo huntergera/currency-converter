@@ -94,6 +94,7 @@ export default function ConverterForm() {
               error={errors.sumFrom}
               onChange={recalculateTo}
               step="0.01"
+              valueAsNumber
             />
             <Select
               className="w-full max-w-28 h-14"
@@ -133,6 +134,7 @@ export default function ConverterForm() {
               error={errors.sumTo}
               onChange={recalculateFrom}
               step="0.01"
+              valueAsNumber
             />
             <Select
               className="w-full max-w-28"

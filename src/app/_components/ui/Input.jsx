@@ -19,7 +19,8 @@ const Input = ({
         {...props}
         placeholder={placeholder}
         {...register(name, {
-          onChange
+          onChange,
+          valueAsNumber: true,
         })}
       />
       {error && <span className="text-red">{error.message}</span>}

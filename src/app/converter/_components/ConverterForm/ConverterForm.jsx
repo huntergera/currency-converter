@@ -84,7 +84,8 @@ export default function ConverterForm() {
   // };
 
   useEffect(() => {
-    if (currencies.length) recalculateTo();
+    const valueSumFrom = getValues('sumFrom');
+    if (currencies.length && valueSumFrom) recalculateTo();
   }, [currencies]);
 
   if(pending) {
@@ -106,8 +107,8 @@ export default function ConverterForm() {
               name="sumFrom"
               register={register}
               placeholder="100"
-              error={errors.sumFrom?.message}
-              type="number"
+              error={errors.sumFrom}
+              valueAsNumber
               onChange={recalculateTo}
               step="0.01"
             />
@@ -148,7 +149,7 @@ export default function ConverterForm() {
               placeholder="100"
               error={errors.sumTo}
               onChange={recalculateFrom}
-              type="number"
+              valueAsNumber
               step="0.01"
             />
             <Select

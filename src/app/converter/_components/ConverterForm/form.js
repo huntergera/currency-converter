@@ -8,8 +8,8 @@ export const ukrOption = {
 };
 
 export const validationSchema = z.object({
-  sumFrom: z.number().positive().nullable(),
-  sumTo: z.number().positive().nullable(),
+  sumFrom: z.number().positive(),
+  sumTo: z.number().positive(),
   currencyFrom: z.string(),
   currencyTo: z.string(),
   date: z.string(),

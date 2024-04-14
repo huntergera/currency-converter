@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <MainBanner />
       <section className="py-20 bg-blue-light">
-        <div className="container max-w-4xl py-14 px-12 bg-white">
+        <div className="container max-w-4xl py-14 px-12 bg-white relative">
           <h2 className="text-h2">Конвертер валют</h2>
           <ConverterForm />
         </div>

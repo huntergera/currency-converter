@@ -10,7 +10,7 @@ export default function HistoryFile() {
 
   return (
     <section className="py-20">
-      <div className="container max-w-4xl py-14 px-12 bg-blue-light relative">
+      <div className="container max-w-4xl py-14 px-12 bg-blue-light">
         <div className="flex justify-between items-center">
           <h3 className="text-h3">Історія конвертації</h3>
           {!!historyList.length && (

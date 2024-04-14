@@ -7,7 +7,8 @@ const Input = ({
   error,
   name,
   onChange,
-  type,
+  valueAsNumber,
+  type = valueAsNumber ? "number" : "text",
   ...props
 }) => {
   return (
@@ -20,7 +21,7 @@ const Input = ({
         placeholder={placeholder}
         {...register(name, {
           onChange,
-          valueAsNumber: true,
+          valueAsNumber,
         })}
       />
       {error && <span className="text-red">{error.message}</span>}

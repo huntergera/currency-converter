@@ -79,7 +79,6 @@ export default function ConverterForm() {
 
   return (
     <div className="mt-16 relative">
-       {/* {pending && <LoadingComponent />} */}
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex gap-x-9 justify-between items-start"

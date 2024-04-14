@@ -47,41 +47,26 @@ export default function ConverterForm() {
 
   const recalculateTo = () => {
     const valueSumFrom = getValues('sumFrom');
-    const currencyNameFrom = getValues('currencyFrom');
-    const currencyNameTo = getValues('currencyTo');
-    const currencyRateFrom = currencies.find(currency => currency.cc === currencyNameFrom).rate;
-    const currencyRateTo = currencies.find(currency => currency.cc === currencyNameTo).rate;
-    const result = valueSumFrom * currencyRateFrom / currencyRateTo;
-    setValue('sumTo', Math.round(result * 100) / 100);
-  };
+    const calculateResult = sum => ({currencyRateTo, currencyRateFrom}) => sum * currencyRateFrom / currencyRateTo;
+    const result = recalculate(calculateResult(valueSumFrom));
+    setValue('sumTo', result);
+  }
 
   const recalculateFrom = () => {
     const valueSumTo = getValues('sumTo');
+    const calculateResult = sum => ({currencyRateTo, currencyRateFrom}) => sum * currencyRateTo / currencyRateFrom;
+    const result = recalculate(calculateResult(valueSumTo));
+    setValue('sumFrom', result);
+  }
+
+  const recalculate = cb => {
     const currencyNameFrom = getValues('currencyFrom');
     const currencyNameTo = getValues('currencyTo');
-    const currencyRateFrom = currencies.find(currency => currency.cc === currencyNameFrom).rate;
-    const currencyRateTo = currencies.find(currency => currency.cc === currencyNameTo).rate;
-    const result = valueSumTo * currencyRateTo / currencyRateFrom;
-    setValue('sumFrom', Math.round(result * 100) / 100);
+    const currencyRateFrom = currencies.find(x => x.cc === currencyNameFrom).rate;
+    const currencyRateTo = currencies.find(x => x.cc === currencyNameTo).rate;
+    const result = cb({currencyRateTo, currencyRateFrom})
+    return Math.round(result * 100) / 100;
   };
-
-  // const getTo = () => {
-  //   return valueSumFrom * currencyRateFrom / currencyRateTo;
-  // }
-
-  // const getFrom = () => {
-  //   return valueSumTo * currencyRateTo / currencyRateFrom;
-  // }
-
-  // const recalculate = (cb) => {
-  //   const valueSumTo = getValues('sumTo');
-  //   const currencyNameFrom = getValues('currencyFrom');
-  //   const currencyNameTo = getValues('currencyTo');
-  //   const currencyRateFrom = currencies.find(x => x.cc === currencyNameFrom).rate;
-  //   const currencyRateTo = currencies.find(x => x.cc === currencyNameTo).rate;
-  //   const result = cb()
-  //   setValue('sumFrom', Math.round(result * 10000) / 10000);
-  // };
 
   useEffect(() => {
     const valueSumFrom = getValues('sumFrom');
@@ -108,7 +93,6 @@ export default function ConverterForm() {
               register={register}
               placeholder="100"
               error={errors.sumFrom}
-              valueAsNumber
               onChange={recalculateTo}
               step="0.01"
             />
@@ -149,7 +133,6 @@ export default function ConverterForm() {
               placeholder="100"
               error={errors.sumTo}
               onChange={recalculateFrom}
-              valueAsNumber
               step="0.01"
             />
             <Select

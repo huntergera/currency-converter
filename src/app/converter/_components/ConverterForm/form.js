@@ -8,16 +8,16 @@ export const ukrOption = {
 };
 
 export const validationSchema = z.object({
-  sumFrom: z.number().min(0.01),
-  sumTo: z.number().positive(),
+  sumFrom: z.number().positive().nullable(),
+  sumTo: z.number().positive().nullable(),
   currencyFrom: z.string(),
   currencyTo: z.string(),
   date: z.string(),
 });
 
 export const defaultValues = {
-  sumFrom: "",
-  sumTo: "",
+  sumFrom: null,
+  sumTo: null,
   currencyFrom: "UAH",
   currencyTo: "USD",
   date: format(new Date(), "yyyy-MM-dd"),

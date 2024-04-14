@@ -8,8 +8,9 @@ export async function getAllCurrencies(date) {
   const url = `${EXCHANGE_API_URL}&${params.toString()}`;
 
   try {
-    const response = await fetch(url, {tags: ['allCurrencies']});
+    const response = await fetch(url);
     return await response.json();
+  
   } catch (error) {
     console.log(error);
   }

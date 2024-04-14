@@ -27,7 +27,8 @@ const config: Config = {
       'gray-100': '#C1C2CA',
       'black': '#1F1E25',
       'pale-slate-blue': '#E0E1EA',
-      'white': '#FFFFFF'
+      'white': '#FFFFFF',
+      'red': '#FF0000'
     },
     fontSize: {
       'h1': ['54px', {

@@ -13,11 +13,13 @@ export default function HistoryFile() {
       <div className="container max-w-4xl py-14 px-12 bg-blue-light relative">
         <div className="flex justify-between items-center">
           <h3 className="text-h3">Історія конвертації</h3>
-          <Button 
+          {!!historyList.length && (
+            <Button 
             onClick={clearHistoryList}
             className="bg-blue text-blue-light hover:bg-blue/90 transition-colors">
             Очистити історію
           </Button>
+          )}
         </div>
         {isLoading ? (
           <LoadingComponent />

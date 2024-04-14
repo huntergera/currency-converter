@@ -1,12 +1,13 @@
 import React from "react";
 
-const InputDate = ({ className, register, name, onChange, ...props }) => {
+const InputDate = ({ className, register, name, onChange, max, ...props }) => {
   return (
     <div className={`relative ${className}`}>
       <label htmlFor="">
         <input
           type='date'
           className={`appearance-none rounded outline-none py-4 px-2 text-center border-gray-100 border border-solid text-gray font-medium text-20 w-full`}
+          max={max}
           {...props}
           {...register(name, {
             onChange,

@@ -127,6 +127,7 @@ export default function ConverterForm() {
               className="w-full max-w-56 h-14"
               error={errors.date}
               onChange={handleDateChange}
+              max={format(new Date(), "yyyy-MM-dd")}
             />
           </div>
         </div>

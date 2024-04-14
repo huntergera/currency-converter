@@ -10,7 +10,6 @@ export async function getAllCurrencies(date) {
   try {
     const response = await fetch(url);
     return await response.json();
-  
   } catch (error) {
     console.log(error);
   }

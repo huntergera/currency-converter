@@ -3,18 +3,22 @@ import Image from "next/image";
 import {useEffect} from "react";
 import { useForm } from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
+import { v4 as uuidv4 } from 'uuid';
+import { format } from "date-fns";
 
-import Input from "../../../_components/ui/Input";
-import Select from "../../../_components/ui/Select";
-import InputDate from "../../../_components/ui/InputDate";
-import Button from "../../../_components/ui/Button";
-import LoadingComponent from "../../../_components/LoadingComponent";
+import Input from "@/app/_components/ui/Input";
+import Select from "@/app/_components/ui/Select";
+import InputDate from "@/app/_components/ui/InputDate";
+import Button from "@/app/_components/ui/Button";
+import LoadingComponent from "@/app/_components/LoadingComponent";
 
 import { useCurrencies } from "./hooks/useCurrencies";
 import { validationSchema, defaultValues } from "./form";
+import { useHistoryStore } from "@/store/store"
 
 export default function ConverterForm() {
   const { currencies, pending, fetchCurrencies } = useCurrencies();
+  const setToHistoryList = useHistoryStore(state => state.setToHistoryList)
 
   const {
     formState: { errors },
@@ -27,7 +31,14 @@ export default function ConverterForm() {
     defaultValues,
   });
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    setToHistoryList({
+      id: uuidv4(),
+      date: format(new Date(), "dd.MM.yyyy"),
+      amountFrom: `${data.sumFrom} ${data.currencyFrom}`,
+      amountTo: `${data.sumTo} ${data.currencyTo}`
+    })
+  };
 
   const handleDateChange = () => {
     const valueDate = getValues('date');
@@ -41,7 +52,7 @@ export default function ConverterForm() {
     const currencyRateFrom = currencies.find(currency => currency.cc === currencyNameFrom).rate;
     const currencyRateTo = currencies.find(currency => currency.cc === currencyNameTo).rate;
     const result = valueSumFrom * currencyRateFrom / currencyRateTo;
-    setValue('sumTo', Math.round(result * 10000) / 10000);
+    setValue('sumTo', Math.round(result * 100) / 100);
   };
 
   const recalculateFrom = () => {
@@ -51,7 +62,7 @@ export default function ConverterForm() {
     const currencyRateFrom = currencies.find(currency => currency.cc === currencyNameFrom).rate;
     const currencyRateTo = currencies.find(currency => currency.cc === currencyNameTo).rate;
     const result = valueSumTo * currencyRateTo / currencyRateFrom;
-    setValue('sumFrom', Math.round(result * 10000) / 10000);
+    setValue('sumFrom', Math.round(result * 100) / 100);
   };
 
   // const getTo = () => {
@@ -98,7 +109,7 @@ export default function ConverterForm() {
               error={errors.sumFrom?.message}
               type="number"
               onChange={recalculateTo}
-              step="0.0001"
+              step="0.01"
             />
             <Select
               className="w-full max-w-28 h-14"
@@ -137,7 +148,7 @@ export default function ConverterForm() {
               error={errors.sumTo}
               onChange={recalculateFrom}
               type="number"
-              step="0.0001"
+              step="0.01"
             />
             <Select
               className="w-full max-w-28"

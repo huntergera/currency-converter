@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 
 import { getAllCurrencies } from "@/actions/currency";
-import compareByProp from '@/helpers/utils/compareByProp';
 import { ukrOption } from '../form';
 
 export const useCurrencies = () => {
   const [currencies, setCurrencies] = useState([]);
   const [pending, setPending] = useState(false);
+
+  const compareByProp = (prop) => (a, b) => a[prop].localeCompare(b[prop]);
 
   const fetchCurrencies = async date => {
     try {

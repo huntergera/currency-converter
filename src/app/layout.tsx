@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+import {ToastContainer} from "react-toastify";
 
 import Header from "@/app/_components/layout/Header";
 import Footer from "@/app/_components/layout/Footer";
+
+import 'react-toastify/dist/ReactToastify.css';
 
 import "./globals.css";
 import {roboto, workSans} from "@/helpers/utils/customFonts";
@@ -22,6 +25,7 @@ export default function RootLayout({
         <Header />
         <main className='flex-auto'>{children}</main>
         <Footer />
+        <ToastContainer limit={3} />
       </body>
     </html>
   );

@@ -1,6 +1,14 @@
 import Image from "next/image";
 
-export default function HistoryItem({item}) {
+interface HistoryItemProps {
+    item: {
+        date: string;
+        amountFrom: string;
+        amountTo: string;
+    }
+}
+
+const HistoryItem: React.FC<HistoryItemProps> =({item}) => {
   return (
     <div className="flex items-center p-4 bg-white rounded gap-4 w-[47%] text-18">
       <span className="text-gray-100">{item.date}</span>
@@ -15,4 +23,6 @@ export default function HistoryItem({item}) {
     </div>
   );
 };
+
+export default HistoryItem;
 

@@ -1,4 +1,4 @@
-import { EXCHANGE_API_URL } from "../helpers/constants/api";
+import { EXCHANGE_API_URL } from "@/helpers/constants/api";
 
 export async function getAllCurrencies(date) {
   const params = new URLSearchParams();

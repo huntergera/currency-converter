@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { getAllCurrencies } from "../../../../../actions/currency";
-import compareByProp from '../../../../../helpers/utils/compareByProp';
+import { getAllCurrencies } from "@/actions/currency";
+import compareByProp from '@/helpers/utils/compareByProp';
 import { ukrOption } from '../form';
 
 export const useCurrencies = () => {

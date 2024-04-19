@@ -10,7 +10,7 @@ import Input from "@/app/_components/ui/Input";
 import Select from "@/app/_components/ui/Select";
 import InputDate from "@/app/_components/ui/InputDate";
 import Button from "@/app/_components/ui/Button";
-import LoadingComponent from "@/app/_components/LoadingComponent";
+import Loading from "@/app/loading";
 
 import { useCurrencies } from "./hooks/useCurrencies";
 import { validationSchema, defaultValues } from "./form";
@@ -74,11 +74,11 @@ export default function ConverterForm() {
   }, [currencies]);
 
   if(pending) {
-    return <LoadingComponent />
+    return <Loading className="min-h-[190px] mt-16" />
   }
 
   return (
-    <div className="mt-16 relative">
+    <div className="mt-16">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex gap-x-9 justify-between items-start"

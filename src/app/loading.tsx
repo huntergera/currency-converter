@@ -1,14 +1,20 @@
 import Image from "next/image";
 
-export default function Loading() {
+interface LoadingProps {
+    className?: string;
+}
+
+const Loading: React.FC<LoadingProps> = ({className}) => {
     return (
-      <div className="container max-w-4xl py-20 flex justify-center">
+      <div className={`container max-w-4xl py-20 flex justify-center ${className}`}>
         <Image
-          src="/images/icons/loading-icon.svg"
+          src="/images/icons/fade-stagger-circles.svg"
           alt="Loading"
           width={60}
           height={60}
         />
       </div>
-    )
-}
+    );
+};
+
+export default Loading;

@@ -1,9 +1,9 @@
 'use client';
 import Button from "@/app/_components/ui/Button";
 import HistoryItem from "./HistoryItem";
+import Loading from "@/app/loading";
 
 import { useHistoryStore } from "@/store/store"
-import LoadingComponent from "@/app/_components/LoadingComponent";
 
 export default function HistoryFile() {
   const { historyList, clearHistoryList, isLoading } = useHistoryStore();
@@ -22,7 +22,7 @@ export default function HistoryFile() {
           )}
         </div>
         {isLoading ? (
-          <LoadingComponent />
+          <Loading />
         ) : (
           !historyList.length ? (
             <p className="font-medium text-20 text-center mt-3">Here will be your conversion history</p>
